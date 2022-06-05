@@ -5,7 +5,6 @@ project(apriltags_rgbd)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  apriltag_msgs
   apriltag_ros
   cv_bridge
   geometry_msgs

@@ -15,9 +15,6 @@ import math
 from threading import Thread, Lock
 mutex = Lock()
 
-# Custom Imports
-import tf_utils
-
 # ROS Imports
 import rospy
 import tf2_ros
@@ -26,11 +23,6 @@ from sensor_msgs.msg import Image, CameraInfo, PointCloud
 from apriltag_ros.msg import AprilTagDetectionArray
 from message_filters import Subscriber, ApproximateTimeSynchronizer
 from cv_bridge import CvBridge, CvBridgeError
-from tf.transformations import quaternion_from_matrix
-from visualization_msgs.msg import MarkerArray, Marker
-
-# Custom messages
-from apriltags_rgbd.msg import PointArray, LabeledPointArray
 
 class ApriltagsRgbdNode():
     def __init__(self):
@@ -55,10 +47,6 @@ class ApriltagsRgbdNode():
 
         # Publishers
         self.tag_tf_pub = rospy.Publisher("/apriltags_rgbd/tag_tfs", TransformStamped, queue_size=10)
-        self.tag_pt_pub = rospy.Publisher("/apriltags_rgbd/extracted_tag_pts", PointCloud, queue_size=10)
-        self.corner_pt_pub = rospy.Publisher("/apriltags_rgbd/corner_tag_pts", PointCloud, queue_size=10)
-        self.corner_pt_labeled_pub = rospy.Publisher("/apriltags_rgbd/corner_tag_pts_labeled", LabeledPointArray, queue_size=10)
-        self.marker_arr_pub = rospy.Publisher("/apriltags_rgbd/visualization_marker_array", MarkerArray, queue_size=10)
 
     def tagCallback(self, camera_info_data, rgb_data, depth_data, tag_data):
         with mutex:
@@ -81,13 +69,7 @@ class ApriltagsRgbdNode():
 
             # Create messages for point info
             tag_pts = PointCloud()
-            corner_pts = PointCloud()
-            marker_array_msg = MarkerArray()
-            corner_pts_labeled_array = LabeledPointArray()
-
             tag_pts.header = header
-            corner_pts.header = header
-            corner_pts_labeled_array.header = header
 
             # Estimate pose of each tag
             for tag_idx, tag in enumerate(tag_data.detections):
