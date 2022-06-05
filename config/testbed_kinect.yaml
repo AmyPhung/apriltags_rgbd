@@ -62,19 +62,19 @@ bodies:
         #         y: 0
         #         z: 0
 
-# Small pushcore
+# Short wide pushcore
  - pushcore_1:
      tags:
-     - id: 183 #582
-       size: 0.0415
+     - id: 586
+       size: 0.044
        pose:
          position:
            x: 0
-           y: -0.14 #-0.155
-           z: 0.036
+           y: -0.036
+           z: -0.14
          rotation:
            x: 0
-           y: 0.785
+           y: -0.785
            z: 1.57
          position_noise:
            x: 0.001
@@ -84,17 +84,21 @@ bodies:
            x: 0.001
            y: 0.001
            z: 0.001
-     - id: 138 #585
-       size: 0.0415
+
+# Quiver
+ - quiver_1:
+     tags:
+     - id: 50
+       size: 0.080
        pose:
          position:
            x: 0
-           y: -0.14 #-0.155
-           z: -0.036
+           y: -0.1397 # 5.5 inches
+           z: 0
          rotation:
-           x: 3.14
-           y: -0.785
-           z: 1.57
+           x: 0
+           y: 0
+           z: 0
          position_noise:
            x: 0.001
            y: 0.001
@@ -107,25 +111,6 @@ bodies:
 # Gripper 
  - gripper:
      tags:
-    #  - id: 135
-    #    size: 0.0415
-    #    pose:
-    #      position:
-    #        x: 0.03875
-    #        y: 0
-    #        z: 0.0335
-    #      rotation:
-    #        x: 0
-    #        y: 0
-    #        z: 3.14
-    #      position_noise:
-    #        x: 0.001
-    #        y: 0.001
-    #        z: 0.001
-    #      rotation_noise:
-    #        x: 0.001
-    #        y: 0.001
-    #        z: 0.001
      - id: 580
        size: 0.044
        pose:
@@ -146,99 +131,6 @@ bodies:
            y: 0.001
            z: 0.001
 
-          #  0.044
-
-#
-# # Big Pushcore
-#  - tagslam_pushcore_2:
-#      is_static: false
-#      default_tag_size: 0.044
-#      type: simple
-#      tags:
-#      - id: 580
-#        size: 0.044
-#        pose:
-#          position:
-#            x: 0
-#            # y: -0.137 #model
-#            y: -0.159 #empirically adjusted
-#            z: 0.036
-#          rotation:
-#            x: -0.61394313
-#            y: 0.61394313
-#            z: 1.48218982
-#          position_noise:
-#            x: 0.001
-#            y: 0.001
-#            z: 0.001
-#          rotation_noise:
-#            x: 0.001
-#            y: 0.001
-#            z: 0.001
-#      - id: 581
-#        size: 0.044
-#        pose:
-#          position:
-#            x: 0
-#            # y: -0.137 #model
-#            y: -0.159 #empirically adjusted
-#            z: -0.036
-#          rotation:
-#            x: -1.7599884
-#            y: -1.7599884
-#            z: -0.72901107
-#          position_noise:
-#            x: 0.001
-#            y: 0.001
-#            z: 0.001
-#          rotation_noise:
-#            x: 0.001
-#            y: 0.001
-#            z: 0.001
- # We no longer have this puschore
- # - tagslam_pushcore_2:
- #     is_static: false
- #     default_tag_size: 0.044
- #     type: simple
- #     tags:
- #     - id: 578
- #       size: 0.044
- #       pose:
- #         position:
- #           x: 0
- #           y: -0.1016
- #           z: 0.036
- #         rotation:
- #           x: -0.61394313
- #           y: 0.61394313
- #           z: 1.48218982
- #         position_noise:
- #           x: 0.001
- #           y: 0.001
- #           z: 0.001
- #         rotation_noise:
- #           x: 0.001
- #           y: 0.001
- #           z: 0.001
- #     - id: 579
- #       size: 0.044
- #       pose:
- #         position:
- #           x: 0
- #           y: -0.1016
- #           z: -0.036
- #         rotation:
- #           x: -1.7599884
- #           y: -1.7599884
- #           z: -0.72901107
- #         position_noise:
- #           x: 0.001
- #           y: 0.001
- #           z: 0.001
- #         rotation_noise:
- #           x: 0.001
- #           y: 0.001
- #           z: 0.001
 
  # The xrf tags conflict with the base tags - this needs to be fixed
  # - tagslam_xrf_1:

@@ -23,7 +23,7 @@ standalone_tags:
   [
     {id: 4, size: 0.6925, name: raw_base_tag},
     {id: 580, size: 0.044, name: raw_gripper_tag}, 
-    {id: 138, size: 0.0415, name: raw_tool_tag},
+    {id: 586, size: 0.044, name: raw_tool_tag},
     {id: 585, size: 0.044, name: raw_tag_tag},
     {id: 50, size: 0.080, name: raw_quiver_tag}
   ]
