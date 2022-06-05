@@ -10,8 +10,6 @@ sys.path.append(fpath)
 # Python Imports
 import numpy as np
 import cv2
-import rgb_depth_fuse as fuse
-import math
 from threading import Thread, Lock
 mutex = Lock()
 
