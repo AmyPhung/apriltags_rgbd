@@ -25,7 +25,7 @@ TF_TIMEOUT = 2 # Maximum age of tfs to use in estimate (in seconds)
 class BodyPoseEstimationNode():
     def __init__(self):
         rospy.init_node("body_pose_estimator")
-        self.rate = rospy.Rate(10)
+        self.rate = rospy.Rate(60)
 
         cfg_param = rospy.get_param("~apriltags_rbgd_config")
         self.cfg = self.parseConfig(cfg_param)
